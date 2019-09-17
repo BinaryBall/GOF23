@@ -3,7 +3,7 @@ package com.jamal.provider;
 /**
  * GitHub 第三方登陆具体实现
  */
-public class GitHubIdentityProvider implements IdentityProvider{
+public class GitHubIdentityProvider extends IdentityProvider{
 
     public GitHubIdentityProvider() {
         System.out.println("我是GitHub第三方登陆具体实现");

@@ -1,20 +1,20 @@
 package com.jamal;
 
-import com.jamal.factory.*;
+import com.jamal.factory.AliPayIdentityProviderFactory;
+import com.jamal.factory.IdentityProviderFactory;
 import com.jamal.provider.IdentityProvider;
 
 public class App {
     public static void main(String[] args) {
 
         // github
-        Identity identity = new Identity();
-        identity.crete(4);
+        IdentityProvider identityProvider = IdentityFactory.create(4);
         // 微信
-        identity.crete(2);
+        IdentityFactory.create(2);
         // QQ
-        identity.crete(3);
+        IdentityFactory.create(3);
         // 支付宝
-        identity.crete(1);
+        IdentityFactory.create(1);
 //        // github
 //        IdentityProviderFactory providerFactory = new GitHubIdentityProviderFactory();
 //        providerFactory.create();
@@ -26,7 +26,7 @@ public class App {
 //        providerFactory.create();
 //
 //        // 支付宝
-//        providerFactory = new AliPayIdentityProviderFactory();
-//        providerFactory.create();
+        IdentityProviderFactory providerFactory  = new AliPayIdentityProviderFactory();
+        IdentityProvider aliPayIdentityProvider = providerFactory.create();
     }
 }

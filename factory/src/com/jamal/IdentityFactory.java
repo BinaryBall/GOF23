@@ -3,12 +3,12 @@ package com.jamal;
 
 import com.jamal.provider.*;
 
-public class Identity {
+public class IdentityFactory {
     /**
      * 第三方登陆验证
-     * @param type 标识符，1：支付宝登陆 2：微信登陆 3：QQ登录 4：github登陆
+     * @param type 标识符，1：支付宝登陆 2：微信登陆 3：QQ登录 4：github登陆 5：微博账号
      */
-    public IdentityProvider crete(int type){
+    public static IdentityProvider create(int type){
         IdentityProvider identityProvider = null;
         switch (type){
             case 1:
@@ -22,6 +22,8 @@ public class Identity {
                 break;
             case 4:
                 identityProvider = new GitHubIdentityProvider();
+            case 5:
+                identityProvider = new WeiBoIdentityProvider();
                 break;
         }
         return identityProvider;

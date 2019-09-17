@@ -1,9 +1,11 @@
 package com.jamal.factory;
 
+import com.jamal.provider.IdentityProvider;
+
 /**
  * 第三方登陆抽象工厂
  */
-public interface IdentityProviderFactory<T> {
+public abstract class IdentityProviderFactory<T> {
     // 创建具体的IdentityProvider
-    T create();
+    public abstract IdentityProvider create();
 }

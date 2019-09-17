@@ -1,14 +1,14 @@
 package com.jamal.provider;
 
 
-public interface IdentityProvider {
+public abstract class IdentityProvider {
 
     // 获取Authorization Code
-    void authorizationCode();
+    abstract void authorizationCode();
 
     // 获取 Access Token
-    void accessToken();
+    abstract void accessToken();
 
     // 这里会有很多方法
-    void callback();
+    abstract void callback();
 }
