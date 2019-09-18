@@ -1,7 +1,7 @@
 package com.jamal.observer;
 
 /**
- * 读者账号
+ * 读者者王山
  */
 public class WangSanReader implements Reader{
     private String name;
@@ -14,6 +14,4 @@ public class WangSanReader implements Reader{
     public void reader(String authorName,String article) {
         System.out.println(name+" 阅读了 "+authorName+" 发布的 "+article+" 文章");
     }
-
-
 }

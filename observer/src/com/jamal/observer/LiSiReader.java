@@ -1,12 +1,12 @@
 package com.jamal.observer;
 
 /**
- * 阅读者张三
+ * 阅读者李四
  */
-public class ZhangsanReader implements Reader{
+public class LiSiReader implements Reader{
     private String name;
 
-    public ZhangsanReader(String name){
+    public LiSiReader(String name){
         this.name = name;
     }
 

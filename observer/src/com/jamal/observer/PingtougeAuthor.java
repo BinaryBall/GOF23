@@ -3,7 +3,7 @@ package com.jamal.observer;
 import java.util.Vector;
 
 /**
- * @author xiaoxiang
+ * @author 平头哥
  * @title: PingtougeAuthor
  * @projectName observer
  * @description: TODO
@@ -18,22 +18,34 @@ public class PingtougeAuthor implements Author{
     // 文章
     private String article;
 
+
     public PingtougeAuthor(String name){
         this.name = name;
         this.readers = new Vector<>();
     }
 
+    /**
+     * 添加关注者
+     * @param reader
+     */
     @Override
     public void addReader(Reader reader) {
         if (readers.contains(reader)) return;
         readers.add(reader);
     }
 
+    /**
+     * 移除关注者
+     * @param reader
+     */
     @Override
     public void deleteReader(Reader reader) {
         readers.remove(reader);
     }
 
+    /**
+     * 通知关注者
+     */
     @Override
     public void notifyReader() {
         for (Reader reader:readers){
@@ -41,6 +53,11 @@ public class PingtougeAuthor implements Author{
         }
     }
 
+    /**
+     * 写文章
+     * @param article
+     */
+    @Override
     public void writeArticle(String article){
         this.article = article;
         notifyReader();
